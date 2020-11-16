@@ -4,7 +4,9 @@
   "description": "Assignment Innovaccer Patients Info Application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --mode development --env development",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
   },
   "dependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "ts-node": "^9.0.0"
   }
 }
