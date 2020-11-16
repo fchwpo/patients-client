@@ -1,4 +1,5 @@
 import * as React from "react";
+import './main.scss'
 
 export const App = () => (
   <h1>
