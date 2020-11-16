@@ -3,6 +3,6 @@ import './main.scss'
 
 export const App = () => (
   <h1>
-    Hi! Initial Setup
+    Hi! Initial Setup Done
   </h1>
 );
