@@ -1,0 +1,3 @@
+[submodule "patients-server"]
+	path = patients-server
+	url = https://github.com/fchwpo/patients-server.git
