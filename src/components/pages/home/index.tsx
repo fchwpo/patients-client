@@ -10,7 +10,7 @@ export const PatientsHome: React.FC = () => {
     const [toastMessage, toggleToastMessage] = React.useState({
         show: false,
         title: '',
-        apperance: '',
+        appearance: '',
     })
 
     return (
@@ -19,20 +19,20 @@ export const PatientsHome: React.FC = () => {
                 <FileSelector
                     accept={'.xlsx, .xls, .csv'}
                     onChange={(e: Event) => {
-                        uploadFileWithProgress(e, (status, progress) => {
+                        uploadFileWithProgress(e, (status, progress, msg) => {
                             if (status == 'SUCCESS') {
                                 toggleToastMessage({
                                     show: true,
                                     title:
                                         'Uploaded File Successfully! Patients Info Added!',
-                                    apperance: 'success',
+                                    appearance: 'success',
                                 })
                                 return
                             } else if (status == 'ERROR') {
                                 toggleToastMessage({
                                     show: true,
-                                    title: 'Error Uploading File Please Check!',
-                                    apperance: 'alert',
+                                    title: msg || 'Error Uploading File Please Check!',
+                                    appearance: 'alert',
                                 })
                                 return
                             }
@@ -45,7 +45,7 @@ export const PatientsHome: React.FC = () => {
                         toggleToastMessage({
                             show: false,
                             title: '',
-                            apperance: '',
+                            appearance: '',
                         });
                         fileSelector.current.triggerClick(false)
                     }}
@@ -59,7 +59,7 @@ export const PatientsHome: React.FC = () => {
                         onClose={() => toggleToastMessage({
                             show: false,
                             title: '',
-                            apperance: '',
+                            appearance: '',
                         })}
                     />
                 )}
