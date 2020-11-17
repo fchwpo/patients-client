@@ -27,7 +27,7 @@ export const PatientsInfo : React.FC<{
 
     return (
         <Card className="patient-info-card" shadow="medium">
-            <Avatar className="patient-info-avatar" size='regular' tooltipPosition="bottom" withTooltip>
+            <Avatar className="patient-info-avatar" size='regular' withTooltip={false}>
                 {patientInfo.name}
             </Avatar>
             {Object.keys(patientInfo || {}).map((curItem) => {
