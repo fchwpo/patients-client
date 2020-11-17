@@ -1,9 +1,16 @@
 import * as React from "react"
+import { PatientsInfo } from './PatientsInfo';
 
-export const PatientsDesc: React.FC = () => {
+export const PatientsDesc: React.FC<{
+    match: {
+        params: {
+            id: number | string
+        }
+    }
+}> = (props) => {
     return (
-        <div>
-            Patient Desc
-        </div>
+        <PatientsInfo
+            patientId={Number(props.match.params.id)}
+        />
     )
 }
