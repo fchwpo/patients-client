@@ -4,6 +4,7 @@ import { PatientsHome } from "./pages/home";
 import { PatientsListing } from "./pages/listing";
 import { PatientsDesc } from "./pages/desc";
 import './main.scss'
+import '@innovaccer/design-system/css';
 
 export const App = () => (
   <>
