@@ -8,9 +8,6 @@ import '@innovaccer/design-system/css';
 
 export const App = () => (
   <>
-    <h1>
-      Hi! Initial Setup Done
-    </h1>
     <BrowserRouter>
       <Link to="/" children="Home" />
       <Link to="/patients" children="Listing" />
