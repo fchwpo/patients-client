@@ -4,6 +4,7 @@
   "description": "Assignment Innovaccer Patients Info Application",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --write \"src/**/*.js\" \"src/**/*.jsx\"  \"src/**/*.tsx\" \"src/**/*.ts\"  \"src/**/*.css\" \"src/**/*.scss\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --mode development --env development",
     "build:dev": "webpack -w --mode development",
