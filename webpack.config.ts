@@ -9,7 +9,7 @@ module.exports = {
   mode: production ? 'production' : 'development',
 	...(!production && { devtool: 'source-map' }),
   output: {
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "./build"),
     filename: "bundle.js",
   },
   resolve: {
@@ -61,6 +61,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.html"),
+      publicPath: "/"
     }),
     new MiniCssExtractPlugin({
       filename: `styles/${
