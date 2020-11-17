@@ -1,0 +1,14 @@
+.home-wrapper{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    position: relative;
+    .toast-msg{
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+}
