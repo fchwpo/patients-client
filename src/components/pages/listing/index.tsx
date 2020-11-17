@@ -1,12 +1,10 @@
-import * as React from "react";
-import { PatinetsTable } from "./PatientsTable";
+import * as React from 'react';
+import { PatinetsTable } from './PatientsTable';
 
 export const PatientsListing: React.FC = () => {
     return (
         <>
-        <PatinetsTable 
-            title="Patients List"
-        />
+            <PatinetsTable title='Patients List' />
         </>
-    )
-}
+    );
+};

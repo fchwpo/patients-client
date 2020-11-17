@@ -1,27 +1,27 @@
-.patient-info-card{
+.patient-info-card {
     width: 65%;
     margin: auto;
     padding: 1rem;
-    .patient-info-avatar{
+    .patient-info-avatar {
         width: 100px;
         height: 100px;
         margin-bottom: 2rem;
-        .Text{
+        .Text {
             font-size: 40px;
         }
     }
-    .info-item{
+    .info-item {
         display: flex;
         justify-content: center;
         align-items: center;
         word-break: break-all;
         min-height: 45px;
     }
-    .info-key{
+    .info-key {
         width: 35%;
         padding: 0.5rem;
     }
-    .info-value{
+    .info-value {
         width: 65%;
         padding: 0.5rem;
     }

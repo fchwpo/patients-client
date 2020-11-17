@@ -1,18 +1,13 @@
-import {
-    Input,
-    Label,
-    Placeholder,
-    PlaceholderParagraph,
-} from '@innovaccer/design-system'
-import * as React from 'react'
+import { Input, Label, Placeholder, PlaceholderParagraph } from '@innovaccer/design-system';
+import * as React from 'react';
 
 export const TableHeader: React.FC<{
-    searchText: string
-    updateSearchText: (searchText: string) => void
-    isFetching: boolean
-    totalRecords: number
+    searchText: string;
+    updateSearchText: (searchText: string) => void;
+    isFetching: boolean;
+    totalRecords: number;
 }> = ({ isFetching, searchText, totalRecords, updateSearchText }) => {
-    const label = `Showing ${totalRecords || 0} items`
+    const label = `Showing ${totalRecords || 0} items`;
     return (
         <div className='Header'>
             <div className='Header-content Header-content--top'>
@@ -22,7 +17,7 @@ export const TableHeader: React.FC<{
                         icon='search'
                         placeholder={"Enter Patient's Name"}
                         onChange={(e) => {
-                            updateSearchText(e.target.value)
+                            updateSearchText(e.target.value);
                         }}
                         value={searchText}
                         onClear={() => updateSearchText && updateSearchText('')}
@@ -40,5 +35,5 @@ export const TableHeader: React.FC<{
                 )}
             </div>
         </div>
-    )
-}
+    );
+};

@@ -1,17 +1,17 @@
-import { Button, Card, Toast } from '@innovaccer/design-system'
-import * as React from 'react'
-import { FileSelector } from '../../common/file-selector'
-import { uploadFileWithProgress } from './util'
-import './home.scss'
+import { Button, Card, Toast } from '@innovaccer/design-system';
+import * as React from 'react';
+import { FileSelector } from '../../common/file-selector';
+import { uploadFileWithProgress } from './util';
+import './home.scss';
 
 export const PatientsHome: React.FC = () => {
-    const fileSelector: React.Ref<FileSelector> = React.useRef()
+    const fileSelector: React.Ref<FileSelector> = React.useRef();
 
     const [toastMessage, toggleToastMessage] = React.useState({
         show: false,
         title: '',
         appearance: '',
-    })
+    });
 
     return (
         <Card className='home-wrapper' shadow='medium'>
@@ -23,20 +23,19 @@ export const PatientsHome: React.FC = () => {
                             if (status == 'SUCCESS') {
                                 toggleToastMessage({
                                     show: true,
-                                    title:
-                                        'Uploaded File Successfully! Patients Info Added!',
+                                    title: 'Uploaded File Successfully! Patients Info Added!',
                                     appearance: 'success',
-                                })
-                                return
+                                });
+                                return;
                             } else if (status == 'ERROR') {
                                 toggleToastMessage({
                                     show: true,
                                     title: msg || 'Error Uploading File Please Check!',
                                     appearance: 'alert',
-                                })
-                                return
+                                });
+                                return;
                             }
-                        })
+                        });
                     }}
                     ref={fileSelector}
                 />
@@ -47,7 +46,7 @@ export const PatientsHome: React.FC = () => {
                             title: '',
                             appearance: '',
                         });
-                        fileSelector.current.triggerClick(false)
+                        fileSelector.current.triggerClick(false);
                     }}
                 >
                     Upload Patients File
@@ -56,14 +55,16 @@ export const PatientsHome: React.FC = () => {
                     <Toast
                         className='toast-msg'
                         {...toastMessage}
-                        onClose={() => toggleToastMessage({
-                            show: false,
-                            title: '',
-                            appearance: '',
-                        })}
+                        onClose={() =>
+                            toggleToastMessage({
+                                show: false,
+                                title: '',
+                                appearance: '',
+                            })
+                        }
                     />
                 )}
             </div>
         </Card>
-    )
-}
+    );
+};
