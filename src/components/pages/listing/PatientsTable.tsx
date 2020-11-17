@@ -39,7 +39,7 @@ export const PatinetsTable : React.FC<{
     return (
         <div className="Table-container">
           <div style={{ width: '95%' }}>
-            <Card className="Table">
+            <Card className="Table" shadow="medium">
               <div className="Table-grid">
                 <Grid
                     {...props}
