@@ -7,7 +7,11 @@ import './home.scss';
 export const PatientsHome: React.FC = () => {
     const fileSelector: React.Ref<FileSelector> = React.useRef();
 
-    const [toastMessage, toggleToastMessage] = React.useState({
+    const [toastMessage, toggleToastMessage] = React.useState<{
+        show: boolean,
+        title: string,
+        appearance: any
+    }>({
         show: false,
         title: '',
         appearance: '',

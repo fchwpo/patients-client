@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --mode development --env development",
     "build:dev": "webpack -w --mode development",
-    "build": "webpack"
+    "build": "webpack --mode development"
   },
   "repository": {
     "type": "git",

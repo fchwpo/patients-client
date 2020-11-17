@@ -20,7 +20,7 @@ export const PatinetsTable: React.FC<{
     });
     const [searchText, updateSearchText] = React.useState('');
     const [currentPageNo, updatePageNo] = React.useState(1);
-    const [sortingList, setSortingList] = React.useState();
+    const [sortingList, setSortingList] = React.useState<any>();
 
     const totalPages = Math.ceil(patientsInfo.totalCount / pageSize);
 
@@ -72,7 +72,7 @@ export const PatinetsTable: React.FC<{
                             withPagination={totalPages > 1}
                             pageSize={pageSize}
                             showFilters={false}
-                            schema={getGridSchema()}
+                            schema={getGridSchema() as any}
                             loading={isFetching}
                             data={patientsInfo.list}
                         />
