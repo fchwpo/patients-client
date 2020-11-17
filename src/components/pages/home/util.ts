@@ -17,7 +17,7 @@ export const uploadFileWithProgress = (
     ) => void
 ) => {
     const finalFile = e.target.files[0];
-    if (!checkIfValidFileType(finalFile.mimeType)) {
+    if (!checkIfValidFileType(finalFile.type)) {
         updateStatus('ERROR', null, 'Only .csv, .xlsx & .xls files allowed');
         return;
     }
