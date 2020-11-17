@@ -37,10 +37,14 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@innovaccer/design-system": "^1.4.0-0",
     "@types/react-router-dom": "^5.1.6",
+    "@types/throttle-debounce": "^2.1.0",
+    "file-loader": "^6.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
+    "throttle-debounce": "^3.0.1",
     "ts-node": "^9.0.0"
   }
 }

@@ -43,7 +43,27 @@ module.exports = {
 						}
 					}
 				]
-			},
+      },
+      {
+        test: /\.(ttf|eot|woff|woff2|svg|gif|otf)/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: function name(fileName: string) {
+              fileName = fileName.replace(
+                /.*(node_modules|src\/font)\//i,
+                ''
+              );
+              fileName = fileName.replace(
+                /\.(.+)/,
+                '.[contenthash:8].$1?1-VZJ-ver'
+              );
+              return fileName;
+            },
+            publicPath: '../'
+          }
+        }
+      }
     ],
   },
   optimization: {
