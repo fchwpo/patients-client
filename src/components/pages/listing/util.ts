@@ -2,8 +2,8 @@ import axios from 'axios';
 
 const localPatientsInfoCache: any = {};
 
-export const getPatientsInfo = async (pageNo: number, sortBy: any = [], pageSize: number) => {
-  let cacheKey = `${pageNo}_${pageSize}`;
+export const getPatientsInfo = async (pageNo: number, sortBy: any = [], pageSize: number, searchText: string) => {
+  let cacheKey = `${pageNo}_${pageSize}_${searchText}`;
   let finalSortBy: any = {};
   sortBy.forEach((cur: {
     name: string,
@@ -12,7 +12,7 @@ export const getPatientsInfo = async (pageNo: number, sortBy: any = [], pageSize
     finalSortBy[cur.name] = cur.type.toUpperCase();
   })
   Object.keys(finalSortBy).forEach((sortKey: string) => {
-    cacheKey += `${sortKey}_${finalSortBy[sortKey]}`
+    cacheKey += `_${sortKey}_${finalSortBy[sortKey]}`
   })
   if (localPatientsInfoCache[cacheKey]){
     return localPatientsInfoCache[cacheKey]
@@ -22,9 +22,11 @@ export const getPatientsInfo = async (pageNo: number, sortBy: any = [], pageSize
     params: {
       pageNo,
       pageSize,
-      sortBy: finalSortBy
+      sortBy: finalSortBy,
+      searchKey: searchText
     }
   });
+  localPatientsInfoCache[cacheKey] = data.data;
   return data.data
 }
 

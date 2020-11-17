@@ -1,6 +1,7 @@
 import { Card, Grid, Pagination } from '@innovaccer/design-system'
 import * as React from 'react'
 import { getPatientsInfo, getGridSchema } from './util'
+import { TableHeader } from './TableHeader';
 import './patient-table.scss'
 import { useHistory } from 'react-router-dom'
 
@@ -20,6 +21,7 @@ export const PatinetsTable : React.FC<{
       list: [],
       totalCount: 0
     });
+    const [searchText, updateSearchText] = React.useState('');
     const [currentPageNo, updatePageNo] = React.useState(1);
     const [sortingList , setSortingList] = React.useState();
 
@@ -27,7 +29,7 @@ export const PatinetsTable : React.FC<{
 
     React.useEffect(() => {
       setIsFetching(true);
-      getPatientsInfo(currentPageNo, sortingList, pageSize).then((data) => {
+      getPatientsInfo(currentPageNo, sortingList, pageSize, searchText).then((data) => {
         setPatientsInfo({
           list: data[0],
           totalCount: data[1]
@@ -37,12 +39,23 @@ export const PatinetsTable : React.FC<{
         console.log(err);
         setIsFetching(false);
       })
-    }, [currentPageNo, sortingList]);
+    }, [currentPageNo, sortingList, searchText]);
 
     return (
         <div className="Table-container">
           <div style={{ width: '95%' }}>
             <Card className="Table" shadow="medium">
+              <div className="Table-header">
+                <TableHeader
+                  totalRecords={patientsInfo.totalCount}
+                  isFetching={isFetching}
+                  searchText={searchText}
+                  updateSearchText={(value) => {
+                    updateSearchText(value);
+                    updatePageNo(1);
+                  }}
+                />
+              </div>
               <div className="Table-grid">
                 <Grid
                   onRowClick={(data) => {
