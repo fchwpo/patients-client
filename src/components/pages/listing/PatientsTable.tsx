@@ -2,11 +2,14 @@ import { Card, Grid, Pagination } from '@innovaccer/design-system'
 import * as React from 'react'
 import { getPatientsInfo, getGridSchema } from './util'
 import './patient-table.scss'
+import { useHistory } from 'react-router-dom'
 
 export const PatinetsTable : React.FC<{
     title: string,
     pageSize?: number,
 }> = (props) => {
+
+    const history = useHistory();
 
     const {
         pageSize = 5
@@ -42,13 +45,16 @@ export const PatinetsTable : React.FC<{
             <Card className="Table" shadow="medium">
               <div className="Table-grid">
                 <Grid
-                    {...props}
+                  onRowClick={(data) => {
+                    history.push(`/patients/${data.id}`)
+                  }}
+                  totalRecords={patientsInfo.totalCount}
                   sortingList={sortingList}
                   updateSortingList={(newSortingList) => {
                     setSortingList(newSortingList);
                     updatePageNo(1);
                   }}
-                  type="data"
+                  type="resource"
                   size='standard'
                   draggable={true}
                   withPagination={totalPages > 1}
