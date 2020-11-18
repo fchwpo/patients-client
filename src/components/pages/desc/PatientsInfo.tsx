@@ -42,8 +42,8 @@ export const PatientsInfo: React.FC<{
 };
 
 PatientsInfo.propTypes = {
-    patientId: PropTypes.number
-}
+    patientId: PropTypes.number,
+};
 
 const PatientInfoItem: React.FC<{
     itemKey: string;
@@ -51,7 +51,7 @@ const PatientInfoItem: React.FC<{
 }> = ({ itemKey, itemValue }) => {
     return (
         <div className='info-item'>
-            <div className='info-key'>{(itemKey || "").toLocaleUpperCase()}</div>
+            <div className='info-key'>{(itemKey || '').toLocaleUpperCase()}</div>
             <div className='info-value'>{itemValue || '-'}</div>
         </div>
     );
@@ -59,5 +59,5 @@ const PatientInfoItem: React.FC<{
 
 PatientInfoItem.propTypes = {
     itemKey: PropTypes.string,
-    itemValue: PropTypes.string
-}
+    itemValue: PropTypes.string,
+};

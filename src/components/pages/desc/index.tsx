@@ -12,7 +12,6 @@ export const PatientsDesc: React.FC<{
     return <PatientsInfo patientId={Number(props.match.params.id)} />;
 };
 
-
 PatientsDesc.propTypes = {
-    match: PropTypes.any
-}
+    match: PropTypes.any,
+};

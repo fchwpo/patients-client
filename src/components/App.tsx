@@ -10,14 +10,14 @@ import '@innovaccer/design-system/css';
 export function App(): React.ReactElement {
     return (
         <>
-        <BrowserRouter>
-            <CustomHeader />
-            <Route path='/' exact component={PatientsHome} />
-            <Route path='/patients' exact component={PatientsListing} />
-            <Route path='/patients/:id' exact component={PatientsDesc} />
-        </BrowserRouter>
-    </>
-    )
+            <BrowserRouter>
+                <CustomHeader />
+                <Route path='/' exact component={PatientsHome} />
+                <Route path='/patients' exact component={PatientsListing} />
+                <Route path='/patients/:id' exact component={PatientsDesc} />
+            </BrowserRouter>
+        </>
+    );
 }
 
 const CustomHeader: React.FC<any> = () => {

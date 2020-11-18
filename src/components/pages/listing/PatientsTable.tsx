@@ -96,8 +96,7 @@ export const PatinetsTable: React.FC<{
     );
 };
 
-
 PatinetsTable.propTypes = {
     title: PropTypes.string,
-    pageSize: PropTypes.number
-}
+    pageSize: PropTypes.number,
+};

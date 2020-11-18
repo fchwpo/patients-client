@@ -39,10 +39,9 @@ export const TableHeader: React.FC<{
     );
 };
 
-
 TableHeader.propTypes = {
     searchText: PropTypes.string,
     updateSearchText: PropTypes.func,
     isFetching: PropTypes.bool,
-    totalRecords: PropTypes.number
-}
+    totalRecords: PropTypes.number,
+};
