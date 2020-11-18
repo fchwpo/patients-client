@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { PatientsInfo } from './PatientsInfo';
+import * as PropTypes from 'prop-types';
 
 export const PatientsDesc: React.FC<{
     match: {
@@ -10,3 +11,8 @@ export const PatientsDesc: React.FC<{
 }> = (props) => {
     return <PatientsInfo patientId={Number(props.match.params.id)} />;
 };
+
+
+PatientsDesc.propTypes = {
+    match: PropTypes.any
+}

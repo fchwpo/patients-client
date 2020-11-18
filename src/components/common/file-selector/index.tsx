@@ -29,7 +29,7 @@ export class FileSelector extends React.Component<{
     };
 
     render() {
-        let addInputFileProps = {};
+        const addInputFileProps = {};
         const acceptFileType = this.props.accept;
         return (
             <div className='file-selector-div' style={{ display: 'none' }}>

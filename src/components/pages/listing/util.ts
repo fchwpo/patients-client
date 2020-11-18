@@ -9,7 +9,7 @@ export const getPatientsInfo = async (
     searchText: string
 ) => {
     let cacheKey = `${pageNo}_${pageSize}_${searchText}`;
-    let finalSortBy: any = {};
+    const finalSortBy: any = {};
     sortBy.forEach((cur: { name: string; type: string }) => {
         finalSortBy[cur.name] = cur.type.toUpperCase();
     });

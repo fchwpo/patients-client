@@ -4,6 +4,7 @@ import { getPatientsInfo, getGridSchema } from './util';
 import { TableHeader } from './TableHeader';
 import './patient-table.scss';
 import { useHistory } from 'react-router-dom';
+import * as PropTypes from 'prop-types';
 
 export const PatinetsTable: React.FC<{
     title: string;
@@ -94,3 +95,9 @@ export const PatinetsTable: React.FC<{
         </div>
     );
 };
+
+
+PatinetsTable.propTypes = {
+    title: PropTypes.string,
+    pageSize: PropTypes.number
+}

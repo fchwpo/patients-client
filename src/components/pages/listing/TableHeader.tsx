@@ -1,5 +1,6 @@
 import { Input, Label, Placeholder, PlaceholderParagraph } from '@innovaccer/design-system';
 import * as React from 'react';
+import * as PropTypes from 'prop-types';
 
 export const TableHeader: React.FC<{
     searchText: string;
@@ -37,3 +38,11 @@ export const TableHeader: React.FC<{
         </div>
     );
 };
+
+
+TableHeader.propTypes = {
+    searchText: PropTypes.string,
+    updateSearchText: PropTypes.func,
+    isFetching: PropTypes.bool,
+    totalRecords: PropTypes.number
+}

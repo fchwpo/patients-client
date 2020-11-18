@@ -7,8 +7,9 @@ import { Navigation, PageHeader } from '@innovaccer/design-system';
 import './main.scss';
 import '@innovaccer/design-system/css';
 
-export const App = () => (
-    <>
+export function App(): React.ReactElement {
+    return (
+        <>
         <BrowserRouter>
             <CustomHeader />
             <Route path='/' exact component={PatientsHome} />
@@ -16,9 +17,10 @@ export const App = () => (
             <Route path='/patients/:id' exact component={PatientsDesc} />
         </BrowserRouter>
     </>
-);
+    )
+}
 
-const CustomHeader: React.FC<{}> = ({}) => {
+const CustomHeader: React.FC<any> = () => {
     const history = useHistory();
     const location = useLocation();
 

@@ -2,6 +2,7 @@ import { Avatar, Card } from '@innovaccer/design-system';
 import * as React from 'react';
 import { getPatientInfoById } from './util';
 import './patients-info.scss';
+import * as PropTypes from 'prop-types';
 
 export const PatientsInfo: React.FC<{
     patientId: number;
@@ -40,14 +41,23 @@ export const PatientsInfo: React.FC<{
     );
 };
 
+PatientsInfo.propTypes = {
+    patientId: PropTypes.number
+}
+
 const PatientInfoItem: React.FC<{
     itemKey: string;
     itemValue: string;
 }> = ({ itemKey, itemValue }) => {
     return (
         <div className='info-item'>
-            <div className='info-key'>{itemKey.toLocaleUpperCase()}</div>
+            <div className='info-key'>{(itemKey || "").toLocaleUpperCase()}</div>
             <div className='info-value'>{itemValue || '-'}</div>
         </div>
     );
 };
+
+PatientInfoItem.propTypes = {
+    itemKey: PropTypes.string,
+    itemValue: PropTypes.string
+}
